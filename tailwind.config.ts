@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -24,6 +25,15 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				adminhub: {
+					background: '#121212',
+					surface: '#1E1E1E',
+					'primary-text': '#FFFFFF',
+					'secondary-text': '#B0B0B0',
+					accent: '#2979FF',
+					success: '#4CAF50',
+					error: '#FF3D00',
+				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
