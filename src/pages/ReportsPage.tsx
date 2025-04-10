@@ -36,7 +36,6 @@ import {
   ResponsiveContainer 
 } from 'recharts';
 
-// Sample student data with marks and attendance
 const studentData = [
   { id: 1, name: 'Rahul Sharma', roll: 'CS001', attendance: 92, marks: 87, grade: 'A' },
   { id: 2, name: 'Priya Patel', roll: 'CS002', attendance: 88, marks: 92, grade: 'A' },
@@ -50,7 +49,6 @@ const studentData = [
   { id: 10, name: 'Ananya Gupta', roll: 'CS006', attendance: 93, marks: 90, grade: 'A' },
 ];
 
-// Sample subject data
 const subjectData = [
   { id: 1, name: 'Operating Systems', code: 'CS501', dept: 'CSE', faculty: 'Dr. Anita Kumar', avgMarks: 78, avgAttendance: 85 },
   { id: 2, name: 'Database Management', code: 'CS502', dept: 'CSE', faculty: 'Dr. Anita Kumar', avgMarks: 80, avgAttendance: 82 },
@@ -62,14 +60,12 @@ const subjectData = [
   { id: 8, name: 'Mobile Development', code: 'IT502', dept: 'IT', faculty: 'Prof. Karan Mehta', avgMarks: 81, avgAttendance: 80 },
 ];
 
-// Correlation data (scatter plot)
 const correlationData = studentData.map(student => ({
   name: student.name,
   attendance: student.attendance,
   marks: student.marks,
 }));
 
-// Sample class comparison data
 const classComparisonData = [
   { name: 'CSE-A', avgMarks: 82, avgAttendance: 88 },
   { name: 'CSE-B', avgMarks: 78, avgAttendance: 85 },
@@ -77,7 +73,6 @@ const classComparisonData = [
   { name: 'ECE-A', avgMarks: 76, avgAttendance: 82 },
 ];
 
-// Grade distribution data
 const gradeDistributionData = [
   { grade: 'A+', count: 15 },
   { grade: 'A', count: 28 },
@@ -396,7 +391,6 @@ const ReportsPage = () => {
                     dataKey="name" 
                     type="category" 
                     stroke="#B0B0B0"
-                    categories={['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']}
                   />
                   <YAxis 
                     stroke="#B0B0B0"

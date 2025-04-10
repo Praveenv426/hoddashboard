@@ -426,10 +426,20 @@ const AnalyticsPage = () => {
                     contentStyle={{ backgroundColor: '#1E1E1E', border: '1px solid #333' }} 
                     labelStyle={{ color: '#FFFFFF' }}
                   />
-                  <Bar 
-                    dataKey="value" 
-                    fill={(entry) => entry.value >= 95 ? "#4CAF50" : entry.value >= 90 ? "#2979FF" : "#FF9800"}
-                  />
+                  <Bar dataKey="value" fill="#2979FF">
+                    {[
+                      { name: 'Dr. Anita Kumar', value: 96 },
+                      { name: 'Prof. Sanjay Gupta', value: 92 },
+                      { name: 'Dr. Manisha Singh', value: 89 },
+                      { name: 'Dr. Priya Shah', value: 94 },
+                      { name: 'Prof. Karan Mehta', value: 91 },
+                    ].map((entry, index) => (
+                      <Cell 
+                        key={`cell-${index}`} 
+                        fill={entry.value >= 95 ? "#4CAF50" : entry.value >= 90 ? "#2979FF" : "#FF9800"}
+                      />
+                    ))}
+                  </Bar>
                 </BarChart>
               </ResponsiveContainer>
             </ChartCard>
