@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { 
   Search, 
@@ -37,7 +36,6 @@ import { Progress } from '@/components/ui/progress';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 
-// Sample student data
 const studentData = [
   { 
     id: 1, 
@@ -111,7 +109,6 @@ const studentData = [
   },
 ];
 
-// Sample performance data for subject-wise marks
 const subjectMarksData = [
   { subject: 'Database Systems', internal: 42, mid: 28, assignment: 18, total: 88, max: 100 },
   { subject: 'Data Structures', internal: 38, mid: 26, assignment: 16, total: 80, max: 100 },
@@ -119,7 +116,6 @@ const subjectMarksData = [
   { subject: 'Operating Systems', internal: 40, mid: 25, assignment: 17, total: 82, max: 100 },
 ];
 
-// Sample attendance data 
 const attendanceData = [
   { month: 'Jan', attendance: 90 },
   { month: 'Feb', attendance: 88 },

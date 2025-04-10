@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { 
   BarChart2, 
@@ -141,6 +140,18 @@ const issuesData = [
 const AnalyticsPage = () => {
   const [timeRange, setTimeRange] = useState('This Semester');
   const [departmentFilter, setDepartmentFilter] = useState('All');
+  
+  const getAttendanceBarColor = (value: number) => {
+    if (value >= 90) return "#4CAF50";
+    if (value >= 80) return "#FF9800";
+    return "#FF3D00";
+  };
+
+  const getPerformanceBarColor = (value: number) => {
+    if (value >= 85) return "#4CAF50";
+    if (value >= 70) return "#FF9800";
+    return "#FF3D00";
+  };
   
   return (
     <div className="space-y-6">
@@ -774,29 +785,27 @@ const AnalyticsPage = () => {
               </ResponsiveContainer>
             </ChartCard>
             
-            <ChartCard title="Student-Faculty Ratio by Department">
+            <ChartCard title="Faculty to Student Ratio">
               <ResponsiveContainer width="100%" height={300}>
-                <BarChart
+                <BarChart 
                   data={departmentComparisonData}
-                  layout="vertical"
+                  margin={{ top: 20, right: 30, left: 0, bottom: 5 }}
                 >
                   <CartesianGrid strokeDasharray="3 3" stroke="#333" />
-                  <XAxis type="number" domain={[0, 25]} stroke="#B0B0B0" />
-                  <YAxis dataKey="department" type="category" stroke="#B0B0B0" />
+                  <XAxis dataKey="department" stroke="#B0B0B0" />
+                  <YAxis stroke="#B0B0B0" />
                   <Tooltip 
-                    formatter={(value) => [`${value}:1`, 'Student-Faculty Ratio']}
                     contentStyle={{ backgroundColor: '#1E1E1E', border: '1px solid #333' }} 
                     labelStyle={{ color: '#FFFFFF' }}
                   />
-                  <Bar 
-                    dataKey="ratio" 
-                    fill={entry => {
-                      if (entry.ratio < 18) return "#4CAF50";
-                      if (entry.ratio < 20) return "#FF9800";
-                      return "#FF3D00";
-                    }} 
-                    name="Student-Faculty Ratio"
-                  />
+                  <Bar dataKey="ratio" name="Student:Faculty Ratio">
+                    {departmentComparisonData.map((entry, index) => (
+                      <Cell 
+                        key={`cell-${index}`} 
+                        fill={entry.ratio <= 18 ? "#4CAF50" : entry.ratio <= 21 ? "#FF9800" : "#FF3D00"}
+                      />
+                    ))}
+                  </Bar>
                 </BarChart>
               </ResponsiveContainer>
             </ChartCard>

@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { 
   BarChart3, 
@@ -397,7 +396,7 @@ const ReportsPage = () => {
                     dataKey="name" 
                     type="category" 
                     stroke="#B0B0B0"
-                    data={['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']}
+                    categories={['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']}
                   />
                   <YAxis 
                     stroke="#B0B0B0"
